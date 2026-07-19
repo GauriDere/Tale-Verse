@@ -1,0 +1,11 @@
+Compiling Java code...
+Starting TaleVerse Server...
+Initializing databases...
+MySQL catalogs ready: taleversedatabase
+Seeded 6 book(s) from books.xml into MySQL.
+Table 'books' verified (ecommerce CRUD schema).
+Default admin user provisioned.
+Tables 'users' and 'admins' verified.
+TaleVerse Server started successfully!
+Listening on http://localhost:8080
+Press Ctrl+C to stop the server.
