@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+
+    <!-- Fantasy -->
+    <book>
+        <title>A Game of Thrones</title>
+        <author>George R.R. Martin</author>
+        <price>250</price>
+        <oldPrice>530</oldPrice>
+        <discount>-53%</discount>
+        <rating>4.5</rating>
+        <image>images/book2.jpg</image>
+        <category>Fantasy</category>
+    </book>
+
+    <book>
+        <title>The Alchemist</title>
+        <author>Paulo Coelho</author>
+        <price>299</price>
+        <oldPrice>427</oldPrice>
+        <discount>-30%</discount>
+        <rating>5.0</rating>
+        <image>images/book3.jpg</image>
+        <category>Fantasy</category>
+    </book>
+
+    <book>
+        <title>The Name of the Wind</title>
+        <author>Patrick Rothfuss</author>
+        <price>450</price>
+        <oldPrice>600</oldPrice>
+        <discount>-25%</discount>
+        <rating>4.8</rating>
+        <image>images/book1.jpg</image>
+        <category>Fantasy</category>
+    </book>
+
+    <!-- Add remaining books in SAME FORMAT -->
+
+    <!-- Example for other category -->
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <price>150</price>
+        <oldPrice>200</oldPrice>
+        <discount>-25%</discount>
+        <rating>4.8</rating>
+        <image>images/book1.jpg</image>
+        <category>Dystopian</category>
+    </book>
+
+    <book>
+        <title>Gone Girl</title>
+        <author>Gillian Flynn</author>
+        <price>320</price>
+        <oldPrice>400</oldPrice>
+        <discount>-20%</discount>
+        <rating>4.4</rating>
+        <image>images/book2.jpg</image>
+        <category>Thriller</category>
+    </book>
+
+    <book>
+        <title>Sherlock Holmes</title>
+        <author>Arthur Conan Doyle</author>
+        <price>300</price>
+        <oldPrice></oldPrice>
+        <discount></discount>
+        <rating>4.8</rating>
+        <image>images/book5.jpg</image>
+        <category>Crime</category>
+    </book>
+
+</books>
