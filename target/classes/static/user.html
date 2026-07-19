@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tale Verse | Magical Stories</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Loading Spinner -->
+  <div class="loader-wrapper" id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo1.png" alt="Tale Verse Logo" class="header-logo-img">
+    </div>
+
+    <nav>
+      <a href="user.html">Home</a>
+      <div class="nav-dropdown-wrapper">
+        <a href="#category-tabs">Categories</a>
+        <div class="nav-dropdown-content">
+          <ul class="category-list">
+            <li><a href="#category-tabs" onclick="selectCategory('Fantasy')">Fantasy</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Dystopian')">Dystopian</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Thriller')">Thriller</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Crime')">Crime</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Horror')">Horror</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Romance')">Romance</a></li>
+            <li><a href="#category-tabs" onclick="selectCategory('Non-fiction')">Non-fiction</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-dropdown-wrapper">
+        <a href="#contact">Contact Us</a>
+        <div class="nav-dropdown-content" style="width: max-content; padding-right: 10px;">
+          <ul class="category-list">
+            <li><a href="mailto:support@taleverse.com"><i class="fa-solid fa-envelope"
+                  style="margin-right: 8px;"></i>support@taleverse.com</a></li>
+            <li><a href="tel:+919359961632"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>+91
+                9359961632</a></li>
+            <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>TaleVerse HQ, Magic
+                World</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-dropdown-wrapper">
+        <a href="#">About Us</a>
+        <div class="nav-dropdown-content" style="width: 320px; padding: 25px; text-align: center; cursor: default;">
+          <img src="images/logo1_copy.png" alt="TaleVerse Logo"
+            style="width: 80px; margin-bottom: 15px; filter: drop-shadow(0 0 10px gold);">
+          <h2 style="color: #facc15; margin-bottom: 10px; font-size: 20px; margin-top: 0;">About TaleVerse ✨</h2>
+          <p style="color: #c4b5fd; font-size: 14px; margin: 0; line-height: 1.5;">
+            Welcome to TaleVerse — your magical world of stories!<br>
+            Discover books from every genre and dive into adventures,
+            romance, thrillers, and more.
+          </p>
+        </div>
+      </div>
+      <a href="#" class="hot-offers">HOT OFFERS</a>
+    </nav>
+
+    <div class="icons">
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search books..." autocomplete="off">
+        <i class="fa-solid fa-search"></i>
+        <div id="search-dropdown" class="search-dropdown hidden"></div>
+      </div>
+      <i class="fa-solid fa-moon theme-toggle" onclick="toggleTheme()" id="theme-icon" title="Toggle Mode"></i>
+      <a href="registration.html" class="icon-wrapper" id="auth-link"
+        style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+        <i class="fa-regular fa-user" id="auth-icon"></i>
+        <span id="user-greeting" style="font-size: 14px; margin-left: 8px; font-weight: 500;"></span>
+      </a>
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge-count" id="wishlist-count">0</span>
+      </div>
+      <a href="cart.html" class="icon-wrapper" style="text-decoration: none; color: inherit;">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2 class="glow-text">Trending</h2>
+      <h1>New Arrivals</h1>
+      <button class="cta-button" id="shop-now-btn">Shop Now</button>
+    </div>
+    <div class="hero-img">
+      <img src="images/magic-book.jpg" alt="Magical Book">
+    </div>
+  </section>
+
+  <main class="main-content">
+    <aside class="sidebar" id="filters">
+      <h3>Filters</h3>
+
+      <div class="filter-group">
+        <h4>Max Price: <span id="price-display">₹1000</span></h4>
+        <input type="range" id="price-range" min="0" max="1000" value="1000" class="slider" aria-label="Price range">
+      </div>
+
+      <div class="filter-group">
+        <h4>Minimum Rating</h4>
+        <label class="radio-label"><input type="radio" name="rating" value="4.5"> 4.5 & Up</label>
+        <label class="radio-label"><input type="radio" name="rating" value="4.0"> 4.0 & Up</label>
+        <label class="radio-label"><input type="radio" name="rating" value="0" checked> Any Rating</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Highlights</h4>
+        <label class="check-label"><input type="checkbox" id="bestseller-filter"> Best Sellers</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Edition</h4>
+        <label class="check-label"><input type="checkbox" class="edition-chk" value="Standard"> Standard</label>
+        <label class="check-label"><input type="checkbox" class="edition-chk" value="Special"> Special</label>
+        <label class="check-label"><input type="checkbox" class="edition-chk" value="Limited"> Limited</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Format</h4>
+        <label class="check-label"><input type="checkbox" class="type-chk" value="Paperback"> Paperback</label>
+        <label class="check-label"><input type="checkbox" class="type-chk" value="Hardcover"> Hardcover</label>
+        <label class="check-label"><input type="checkbox" class="type-chk" value="Audio"> Audio</label>
+      </div>
+    </aside>
+
+    <section class="content-area">
+      <div class="tabs" id="category-tabs">
+        <button class="active">All Books</button>
+        <button>Fantasy</button>
+        <button>Dystopian</button>
+        <button>Thriller</button>
+        <button>Crime</button>
+        <button>Horror</button>
+        <button>Romance</button>
+        <button>Non-fiction</button>
+      </div>
+
+      <div class="products" id="books-container">
+        <!-- Books will be dynamically injected here by Javascript -->
+      </div>
+
+      <h3 class="section-title">Recommended For You</h3>
+      <div class="products recommended-products">
+        <img src="images/book3.jpg" class="rec-img" alt="Rec 1">
+        <img src="images/book1.jpg" class="rec-img" alt="Rec 2">
+        <img src="images/book2.jpg" class="rec-img" alt="Rec 3">
+        <img src="images/book4.jpg" class="rec-img" alt="Rec 4">
+      </div>
+    </section>
+  </main>
+
+  <!-- MySQL books catalog (CRUD → /api/books, persisted in taleversedatabase) -->
+  <div id="db-catalog-overlay" class="db-catalog-overlay hidden" aria-hidden="true">
+    <div class="db-catalog-panel" role="dialog" aria-modal="true" aria-labelledby="db-catalog-title">
+      <div class="db-catalog-header">
+        <div>
+          <h2 id="db-catalog-title">Books catalog</h2>
+          <p class="db-catalog-sub">MySQL · <code>taleversedatabase</code> · table <code>books</code> — changes are
+            stored permanently.</p>
+        </div>
+        <button type="button" class="db-catalog-close" id="db-catalog-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="db-catalog-toolbar">
+        <button type="button" class="db-catalog-btn" id="db-catalog-refresh"><i class="fa-solid fa-rotate"></i>
+          Refresh</button>
+        <button type="button" class="db-catalog-btn db-catalog-btn-primary" id="db-catalog-add"><i
+            class="fa-solid fa-plus"></i> Add book</button>
+      </div>
+      <p id="db-catalog-msg" class="db-catalog-msg" role="status"></p>
+      <div class="db-catalog-table-wrap">
+        <table class="db-catalog-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Photo</th>
+              <th>Title / Author</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Edition</th>
+              <th>Format</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="db-catalog-tbody"></tbody>
+        </table>
+      </div>
+      <div id="db-catalog-form-wrap" class="db-catalog-form-wrap hidden">
+        <h3 id="db-form-title">Add book</h3>
+        <form id="db-catalog-form" class="db-catalog-form">
+          <input type="hidden" id="db-book-id">
+          <div class="db-form-row">
+            <label>Title <input type="text" id="db-book-title" required></label>
+            <label>Author <input type="text" id="db-book-author" required></label>
+          </div>
+          <div class="db-form-row">
+            <label>Price <input type="text" id="db-book-price" required placeholder="₹299"></label>
+            <label>Category
+              <select id="db-book-category" required>
+                <option>Fantasy</option>
+                <option>Dystopian</option>
+                <option>Thriller</option>
+                <option>Crime</option>
+                <option>Horror</option>
+                <option>Romance</option>
+                <option>Non-fiction</option>
+              </select>
+            </label>
+          </div>
+          <div class="db-form-row">
+            <label>Photo URL / path <input type="text" id="db-book-image" placeholder="images/book1.jpg"></label>
+            <label>Old price <input type="text" id="db-book-oldprice" placeholder="₹400"></label>
+          </div>
+          <div class="db-form-row">
+            <label>Discount <input type="text" id="db-book-discount" placeholder="-25%"></label>
+            <label>Rating <input type="number" id="db-book-rating" min="0" max="5" step="0.1" value="4.5"></label>
+          </div>
+          <div class="db-form-row">
+            <label>Edition <input type="text" id="db-book-edition" placeholder="Standard"></label>
+            <label>Format
+              <select id="db-book-format">
+                <option>Paperback</option>
+                <option>Hardcover</option>
+                <option>Ebook</option>
+                <option>Audiobook</option>
+              </select>
+            </label>
+          </div>
+          <label class="db-form-check"><input type="checkbox" id="db-book-bestseller"> Bestseller</label>
+          <div class="db-form-actions">
+            <button type="button" class="db-catalog-btn" id="db-form-cancel">Cancel</button>
+            <button type="submit" class="db-catalog-btn db-catalog-btn-primary" id="db-form-save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer id="about">
+    <div class="footer-content">
+      <img src="images/logo1_copy.png" class="popup-logo" alt="TaleVerse Logo"><!--<h3>TaleVerse ✨</h3>-->
+      <p>Enter the world of magical stories. Discover your next adventure.</p>
+      <div class="socials">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="tv-modal.js"></script>
+  <script src="script.js"></script>
+  <script src="db-catalog.js"></script>
+</body>
+
+</html>
