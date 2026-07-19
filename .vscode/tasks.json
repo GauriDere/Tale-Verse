@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "taleverse: run server",
+            "type": "shell",
+            "command": "cmd",
+            "args": ["/c", "run.bat"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {}
+            },
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false
+            },
+            "problemMatcher": {
+                "owner": "taleverse",
+                "pattern": { "regexp": "^$" },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Compiling Java code",
+                    "endsPattern": "Listening on http://localhost:8080"
+                }
+            }
+        }
+    ]
+}
